@@ -19,7 +19,7 @@ memory after removing 10M array:  4,732,400</pre>
       <b>jsPerf Memory Widget Example</b><br>
       <img width="250" src="./src/assets/images/screenshots/jsPerfWidgetAnim.gif" alt="animated jsPerf widget" />
       <br><br>
-      <a href="./src/modules/jsPerfWidget/examples/jsPerfWidgetExample.html">memory widget demo</a>
+      <a href="https://rg3h.github.io/jsPerf/src/modules/jsPerfWidget/examples/jsPerfWidgetExample.html">memory widget demo</a>
     </td>
     <td valign="top">
       <b>jsPerf Timer Example Results</b>
@@ -29,7 +29,7 @@ memory after removing 10M array:  4,732,400</pre>
       <b>Time Your Code Tool</b><br>
       <img width="250" src="./src/assets/images/screenshots/timeYourCode.jpg" alt="time your code tool" />
       <br><br>
-      <a href="./src/modules/jsPerf/examples/webExamples/timeYourCode/timeYourCode.html">time your code tool</a>
+      <a href="https://rg3h.github.io/jsPerf/src/modules/jsPerf/examples/webExamples/timeYourCode/timeYourCode.html">time your code tool</a>
       <br><br>
     </td>
   </tr>
