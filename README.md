@@ -48,4 +48,4 @@ memory after removing 10M array:  4,732,400</pre>
 <br>
 
 
-<a href="https://rg3h.github.io/jsPerf/"><b>learn more and see more examples</b></a>
+<a href="https://rg3h.github.io/jsPerf/">learn more and see more examples</a>
