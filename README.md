@@ -1,5 +1,5 @@
 <img valign="top" width="64" src="./src/assets/images/logo/logo256.png"/> <img valign="top" src="./src/assets/images/logo/logoText.png" alt="jsPerf"/><br>
-simple-to-use JavaScript timer and memory module
+<b>simple-to-use JavaScript timer and memory module</b>
 <br>
 
 jsPerf is a simple-to-use JavaScript module that measures memory and speed.
