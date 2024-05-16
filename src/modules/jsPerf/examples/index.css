@@ -1,0 +1,44 @@
+/** jsPerf src/index.css **/
+.exampleContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.exampleContainerLeft {
+}
+
+.exampleContainerRight {
+}
+
+.jsPerfMemoryImageWidth {
+  width: 256px;
+}
+
+.timeYourCodeImg {
+  border: var(--border);
+  border-radius: var(--borderRadius);
+  width: 300px;
+}
+
+.bigBlueButton {
+  font-size: 1.1rem;
+  padding: 5px 10px 5px 10px;
+}
+
+.buttonList {
+  justify-content: space-around;
+  margin-top: 4rem;
+}
+
+.linkList {
+  margin: 0 0 2rem 1rem;
+  line-height: 2rem;
+}
+
+/* detect phone in portrait */
+@media screen and (any-pointer: coarse) and (orientation: portrait)
+    and (max-width: 400px) {
+    .bigBlueButton {font-size:0.9rem; padding:5px}
+}

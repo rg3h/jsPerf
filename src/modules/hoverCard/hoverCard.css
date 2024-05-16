@@ -1,0 +1,13 @@
+/** hoverCard.css */
+
+.hoverCardRect {
+  fill: white;
+  filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.5));
+  stroke-width: 1px;
+  stroke: rgb(150, 150, 150);
+}
+
+.hoverCardText {
+  fill: black;
+  font-size: 12px;
+}

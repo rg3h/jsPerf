@@ -1,0 +1,49 @@
+/** hoverCardExample.css **/
+
+.top {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.topMiddle {
+  align-items: baseline;
+  display: flex;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.plotContainer {
+  align-items: center;
+  background: var(--lightPurple);
+  border-radius: 5px;
+  border: var(--border);
+  box-shadow: 5px 5px 5px var(--grey200);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 0 2rem 0;
+  padding: 1rem;
+}
+
+.plotMsg {
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.hoverCardExamplePlot01 {
+  background: rgb(245, 240, 220);
+  border: var(--border);
+  height: 100%;
+  width: 100%;
+}
+
+.hoverCardExamplePlot02 {
+  background: rgb(200, 255, 200);
+  border: var(--border);
+  height: 100%;
+  width:  200px;
+}

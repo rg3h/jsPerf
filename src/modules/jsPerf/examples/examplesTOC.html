@@ -1,0 +1,122 @@
+<!doctype html> <!-- examplesTOC.html -->
+<html lang="en">
+<head>
+<!--     .--.
+    .-._;.--.;_.-.
+   (_.'_..--.._'._)        _     ____            __
+    /.' . 60 . '.\        (_)___|  _ \ ___ _ __ / _|
+   // .      / . \\       | / __| |_) / _ \ '__| |_
+  |; .      /   . |;      | \__ \  __/  __/ |  |  _|
+  ||45    ()    15||     _/ |___/_|   \___|_|  |_|
+  |; .          . |;    |__/ modules for measuring JS memory & timer
+   \\ .        . //
+    \'._' 30 '_.'/
+jgs  '-._'--'_.-'
+         `""` -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>jsPerf Examples Table of Contents</title>
+  <meta name="description" content="jsPerf examples table of contents"/>
+  <meta name="mobile-web-app-capable"       content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="msapplication-tap-highlight"  content="no"  />
+  <link rel="apple-touch-icon" href="../../../assets/images/logo/logo256.png"/>
+  <link rel="icon"             href="../../../assets/images/logo/logo256.png"/>
+  <link rel="stylesheet"   href="../../../assets/fonts/monaSans/monaSans.css"/>
+  <link rel="stylesheet"       href="../../util/reset.css"/>
+  <link rel="stylesheet"       href="../../default/default.css"/>
+  <link rel="stylesheet"       href="./index.css"/>
+
+  <script type="module"        src="../../default/default.js"></script>
+</head>
+<body>
+  <div class="titleContainer">
+    <div class="titleLeft">
+      <a class="aNoDecoration" href="../../../../index.html">
+        <img class="titleLogo" src="../../../assets/images/logo/logo256.png"/>
+      </a>
+    </div>
+    <div class="titleMiddle">jsPerf Examples</div>
+    <div class="titleRight"><div class="titleDate">date</div></div>
+  </div> <!-- titleContainer -->
+
+  <div class="middle">
+
+    jsPerf is a simple-to-use JavaScript module that measures memory
+    and speed. It works both in node and on the web and comes with
+    several examples. jsPerf also includes a real-time memory widget
+    so you can observe overall memory behavior.
+    <br>
+
+    <h2>Web Examples</h2>
+
+    <h3>timer examples</h3>
+    <ul>
+      <li><a href="./webExamples/webSimpleTimerExample/webSimpleTimerExample.html">simple timer example</a></li>
+
+      <li><a href="./webExamples/webContinuousTimerExample/webContinuousTimerExample.html">continuous timer example</a></li>
+
+      <li><a href="./webExamples/timeYourCode/timeYourCode.html">
+          time your code tool</a> (copy-paste your code and time it)</li>
+    </ul>
+    <br>
+
+    <h3>memory examples</h3>
+    For <b>memory</b> measurements, be sure that you are either using
+    <pre>webExamples/runWebExamples.{bat|sh}</pre> or are running a
+    local web server on port 8000 and chrome with the correct memory
+    flags. For example:
+    <br><br>
+
+    <pre class="smallFont">
+chrome --js-flags="--expose-gc" --enable-precise-memory-info        \
+  "https://localhost:8000/src/modules/jsPerf/examples/webExamples/  \
+    webContinuousMemoryExample/webContinuousMemoryExample.html"</pre>
+    <br><br>
+
+    <ul>
+      <li><a href="./webExamples/webSimpleMemoryExample/webSimpleMemoryExample.html">simple memory example</a></li>
+      <li><a href="./webExamples/webContinuousMemoryExample/webContinuousMemoryExample.html">continuous memory example</a></li>
+      <li class="disabled">
+        <a style="color:var(--grey100);"
+           href="./webExamples/memoryYourCode/memoryYourCode.html">
+          memory measurement tool </a> (coming soon!)
+      </li>
+    </ul>
+    <br>
+
+    <h3>jsPerf widget example</h3>
+    The jsPerf widget is js/css that you can easily include
+    in your app. It will create a small container that shows
+    performance metrics.  You will still need to run with the chrome
+    flags, but it makes it easy to monitor and measure application
+    performance.
+    <br><br>
+
+    <pre class="smallFont">
+node ../../../../tools/server/simpleServer.js --webroot "../../"
+chrome --js-flags="--expose-gc" --enable-precise-memory-info \
+  "https://localhost:8000/src/modules/jsPerfWidget/examples/jsPerfWidgetExample.html" </pre>
+    <br><br>
+
+    <a href="../../jsPerfWidget/examples/jsPerfWidgetExample.html">jsPerf widget example</a> (memory use)</a>
+
+
+    <h2>Node Examples</h2>
+
+    cd into these directories and run the provided node script:
+    <div class="linkList">
+      <pre>
+cd nodeExamples/nodeSimpleMemoryExample/
+cd nodeExamples/nodeContinuousMemoryExample/
+
+cd nodeExamples/nodeSimpleTimerExample/
+cd nodeExamples/nodeContinuousTimerExample/
+      </pre>
+    </div>
+
+    <a href="https://github.com/rg3h/jsPerf">get jsPerf on github</a>
+    <br>
+  </div> <!-- middle -->
+</body>
+</html>

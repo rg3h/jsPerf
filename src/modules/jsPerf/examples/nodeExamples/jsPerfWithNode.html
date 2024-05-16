@@ -1,0 +1,219 @@
+<!doctype html> <!-- jsPerfWithNode.html -->
+<html lang="en">
+<head>
+<!--     .--.
+    .-._;.--.;_.-.
+   (_.'_..--.._'._)        _     ____            __
+    /.' . 60 . '.\        (_)___|  _ \ ___ _ __ / _|
+   // .      / . \\       | / __| |_) / _ \ '__| |_
+  |; .      /   . |;      | \__ \  __/  __/ |  |  _|
+  ||45    ()    15||     _/ |___/_|   \___|_|  |_|
+  |; .          . |;    |__/ modules for measuring JS memory & timer
+   \\ .        . //
+    \'._' 30 '_.'/
+jgs  '-._'--'_.-'
+         `""` -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>jsPerf with node</title>
+  <meta name="description" content="jsPerf with node"/>
+  <meta name="mobile-web-app-capable"       content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="msapplication-tap-highlight"  content="no"  />
+  <link rel="apple-touch-icon" href="../../../../assets/images/logo/logo256.png"/>
+  <link rel="icon"             href="../../../../assets/images/logo/logo256.png"/>
+  <link rel="stylesheet"   href="../../../../assets/fonts/monaSans/monaSans.css"/>
+  <link rel="stylesheet"       href="../../../util/reset.css"/>
+  <link rel="stylesheet"       href="../../../default/default.css"/>
+  <link rel="stylesheet"       href="../index.css"/>
+  <script type="module"        src="../../../default/default.js"></script>
+</head>
+<body>
+  <div class="titleContainer">
+    <div class="titleLeft">
+      <a class="aNoDecoration" href="../../../../../index.html">
+        <img class="titleLogo" src="../../../../assets/images/logo/logo256.png"/>
+      </a>
+    </div>
+    <div class="titleMiddle">jsPerf with node</div>
+    <div class="titleRight"><div class="titleDate">date</div></div>
+  </div> <!-- titleContainer -->
+
+  <div class="middle">
+  jsPerf is a simple-to-use JavaScript module for measuring JavaScript
+  memory and speed. These instructions describe how to set up jsPerf in
+  a node app and pointers to several examples.
+  <br>
+  Related to this: <a href="../webExamples/jsPerfWithWeb.html">jsPerf with Web Apps</a>
+
+  <h2>jsPerf API</h2>
+    <table>
+        <tr><td>getName()</td><td>returns the module's name (jsPerf)</td></tr>
+        <tr><td>getVersion()</td><td>returns the module's version</td></tr>
+        <tr><td>supportsMemory()</td>
+          <td>returns true if memory functions are available</td></tr>
+        <tr><td>gcIsAvailable()</td>
+          <td>returns true if jsPerf can call the garbage collector</td></tr>
+        <tr><td>startTime()</td>
+          <td>start the timer, returning start time</td></tr>
+        <tr><td>getTime(startTime)</td><td>get the performance time in
+        seconds or the absolute time if startTime is missing</td></tr>
+        <tr><td>async getMemory()</td><td>get the heap memory used</td></tr>
+    </table>
+
+  <h2>How To Use jsPerf in a Node App</h2>
+
+  <ul>
+    <li>download <a href="nodejs.org">node</a> if you don't have it</li>
+
+    <li>download or fork the
+      <a href="https://github.com/rg3h/jsPerf">jsPerf repository</a>
+    </li>
+
+
+    <li>
+      jsPerf uses ES6 so use <pre><b>import</b></pre> rather
+      than <pre>require</pre>. For example:<br>
+      <pre class="preSmall2">
+import {getMemory} from './modules/jsPerf/jsPerf.js';
+      </pre>
+    </li>
+
+    <li>
+      if you need both require and import, just add these two lines:
+      <pre class="preSmall">
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);</pre>
+    </li>
+    <br>
+
+    <li style="line-height: 1.25rem;">
+      Your <pre><b>package.json</b></pre> should use
+      <pre><b>type="module"</b></pre>
+      For example:<br><br>
+      <div class="codeBox">
+{
+  "author": "",
+  "description": "jsPerf.js",
+  "keywords": ["memory", "performance", "speed", "time", "timer"],
+  "license": "MIT",
+  "name": "jsperf",
+  "scripts": {"test": "echo \"Error: no test\" && exit 1"},
+  <span class="highlight">"type": "module",</span>
+  "version": "1.0.2"
+  }
+      </div>
+    </li>
+    <br>
+
+
+    <li>
+      When measuring memory, include the
+      <pre><b>--expose-gc</b></pre>
+      flag. For example:<br>
+      <pre>node --expose-gc ./yourCode.js</pre>
+    </li>
+  </ul>
+
+
+  <h2>Node Examples</h2>
+
+  <h3>jsPerf Timer Measurements</h3>
+  Just two calls: <pre>startTime()</pre> and <pre>getTime()</pre>
+  allow you to ask questions like:
+
+  <div class="inlineQuote">
+    "How long did it take to fetch the data, analyze it, and present
+    results?"
+  </div>
+
+  <div class="inlineQuote">
+    "Generally, how fast are divs vs. svg rects vs. webGL polygons?"
+  </div>
+  <br>
+
+  Here is an example that times a for loop:<br>
+  <pre>node ./nodeSimpleTimerExample.js</pre>
+  <div class="codeBox">
+import { prettyNum }          from './src/modules/util/util.js';
+import { startTime, getTime } from './src/modules/jsPerf/jsPerf.js';
+
+const count = 100_000_000;
+<b>let start = startTime();</b>
+for (let i = 0, sum = 0; i < count; ++i) { sum += i; }
+<b>let results = getTime(start);</b>
+console.log('time to run for loop', prettyNum(count), 'times:',
+            prettyNum(results, 3), 'seconds');
+  </div>
+  <b>output:</b>
+  <pre class="preSmall">time to run for loop 100,000,000 times: 0.094 seconds</pre>
+  <br><br>
+
+  <h3>jsPerf Memory Measurements</h3>
+  <pre>getMemory()</pre> lets you see how much heap
+  memory the app is using, whether the app is leaking, and what
+  different structures use.
+  <br><br>
+
+  Here is an example that measures allocating a large array.
+  <pre class="preSmall">node --expose-gc ./nodeSimpleMemoryExample.js</pre><br>
+  <div class="codeBox">
+import {isNode, prettyDate,  prettyNum}
+  from ',/modules/util/util.js';
+import {getName, getVersion, getMemory}
+  from './modules/jsPerf/jsPerf.js';
+console.log(getName(), 'v' + getVersion(), prettyDate(new Date));
+
+console.log('baseline heap used:................................',
+            prettyNum(<b>await getMemory()</b>).padStart(11, ' '));
+
+let a = new Array(1e7);
+console.log('memory after allocating a 10 million item array:...',
+            prettyNum(<b>await getMemory()</b>).padStart(11, ' '));
+
+a = null;
+console.log('memory after de-allocating a 10 million item array:',
+            prettyNum(<b>await getMemory()</b>).padStart(11, ' '));
+  </div>
+
+  <b>output:</b><br>
+  <pre class="preSmall2">
+    jsPerf v1.0.1 Monday, 26 February 2024 8:16 am
+    baseline heap used:.............................  4,741,312
+    memory after allocating a 10 million item array: 84,736,584
+    memory after de-allocating a 10 million array:    4,736,440
+  </pre>
+  <br>
+
+  <h3>Other Examples</h3>
+  There are more examples in
+  <pre class="preSmall">src/examples/jsPerfExamples/nodeExamples/</pre>
+  <br>
+  Each example comes with a convenient script to run node with the
+  correct flags.
+
+  <h2>References</h2>
+  <div class="smallFont">
+    <a href="https://www.valentinog.com/blog/node-usage/">
+      <i>Guide: How To Inspect Memory Usage in Node.js</i></a>
+    Valentino Gagliardi, 7Feb20<br>
+
+    <a href="https://deepu.tech/memory-management-in-v8/">
+      <i>Visualizing memory management in V8 Engine</i></a>
+    Deepu K Sasidharan, 27Jan20<br>
+
+    <a href="https://www.thyngster.com/step-by-step-guide-measuring-javascript-memory-usage-on-your-web-pages">
+      <i>Step-by-Step Guide: Measuring JavaScript Memory Usage on
+        Your Web Pages</i></a> Davi Vallego<br>
+
+    <a href="https://www.catchpoint.com/blog/benchmarking-javascript-memory-usage">
+      <i>Benchmarking JavaScript Memory Usage</i></a> catchpoint<br>
+
+    <a href="https://romgrk.com/posts/optimizing-javascript">
+      <i>Optimizing JavaScript</i></a> romgrk<br>
+
+    <a href="https://developer.chrome.com/docs/lighthouse">
+      <i>Google Lighthouse for performance auditing</i></a><br>
+  </div> <!-- smallFont -->
+  </div> <!-- middle -->
+</body></html>

@@ -1,0 +1,15 @@
+/** statsExample.css **/
+.top {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.topMiddle {
+  align-items: baseline;
+  display: flex;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+}

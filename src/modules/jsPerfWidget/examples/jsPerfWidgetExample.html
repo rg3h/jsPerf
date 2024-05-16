@@ -1,0 +1,76 @@
+<!doctype html> <!-- jsPerfWidgetExample.html -->
+<html lang="en">
+<head>
+<!--     .--.
+    .-._;.--.;_.-.
+   (_.'_..--.._'._)        _     ____            __
+    /.' . 60 . '.\        (_)___|  _ \ ___ _ __ / _|
+   // .      / . \\       | / __| |_) / _ \ '__| |_
+  |; .      /   . |;      | \__ \  __/  __/ |  |  _|
+  ||45    ()    15||     _/ |___/_|   \___|_|  |_|
+  |; .          . |;    |__/ modules for measuring JS memory & timer
+   \\ .        . //
+    \'._' 30 '_.'/
+jgs  '-._'--'_.-'
+         `""` -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>jsPerf widget example</title>
+  <meta name="description" content="jsPerf widget example"/>
+  <meta name="mobile-web-app-capable"       content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="msapplication-tap-highlight"  content="no"  />
+  <link rel="apple-touch-icon" href="../../../assets/images/logo/logo256.png"/>
+  <link rel="icon"             href="../../../assets/images/logo/logo256.png"/>
+  <link rel="stylesheet"   href="../../../assets/fonts/monaSans/monaSans.css"/>
+  <link rel="stylesheet"       href="../../util/reset.css"/>
+  <link rel="stylesheet"       href="../../default/default.css"/>
+  <link rel="stylesheet"       href="../jsPerfWidget.css"/>
+  <link rel="stylesheet"       href="./jsPerfWidgetExample.css"/>
+
+  <script type="module"        src="../../default/default.js"></script>
+  <script type="module"        src="./jsPerfWidgetExample.js"></script>
+</head>
+<body>
+  <div class="titleContainer">
+    <div class="titleLeft">
+      <a class="aNoDecoration" href="../../../../index.html">
+        <img class="titleLogo" src="../../../assets/images/logo/logo256.png"/>
+      </a>
+    </div>
+    <div class="titleMiddle">jsPerf memory widget</div>
+    <div class="titleRight"><div class="titleDate">date</div></div>
+  </div> <!-- titleContainer -->
+
+  <div class="middle">
+    <div class="memorySection">
+      <div class="jsPerfMemoryDescription">
+        The jsPerf memory widget measures heap memory over time.
+
+        To try it out, set the slider and click the create button.
+        <br><br>
+        Note that if you do not run chrome with<br>
+        <pre style="text-align:center;width:100%;">chrome --js-flags="--expose-gc"</pre><br>
+        then jsPerf cannot call the garbage collector and
+        you may have to wait a bit to see the memory reset.
+      </div>
+
+      <div class="memorySliderContainer">
+        <div class="row">
+          <div class="memorySliderLow">low</div>
+          <div class="memorySliderHigh">high</div>
+        </div>
+        <div class="row">
+          <input type="range" class="memorySlider">
+        </div>
+      </div>
+
+      <div class=memoryButtonList>
+        <button type="button" class="createButton">create new items</button>
+        <button type="button" class="resetButton">reset</button>
+      </div>
+
+      <div class=memoryResults></div>
+    </div> <!-- memorySection -->
+  </div> <!-- middle -->
+</body></html>

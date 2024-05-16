@@ -1,0 +1,142 @@
+<!doctype html> <!-- timeYourCode.html -->
+<html lang="en">
+<head>
+<!--     .--.
+    .-._;.--.;_.-.
+   (_.'_..--.._'._)        _     ____            __
+    /.' . 60 . '.\        (_)___|  _ \ ___ _ __ / _|
+   // .      / . \\       | / __| |_) / _ \ '__| |_
+  |; .      /   . |;      | \__ \  __/  __/ |  |  _|
+  ||45    ()    15||     _/ |___/_|   \___|_|  |_|
+  |; .          . |;    |__/ modules for measuring JS memory & timer
+   \\ .        . //
+    \'._' 30 '_.'/
+jgs  '-._'--'_.-'
+         `""` -->
+  <meta charset="utf-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>jsPerf Time Your Code</title>
+  <meta name="description" content="jsPerf time your code"/>
+  <meta name="mobile-web-app-capable"       content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="msapplication-tap-highlight"  content="no"  />
+  <link rel="apple-touch-icon"
+        href="../../../../../assets/images/logo/logo256.png"/>
+  <link rel="icon"
+        href="../../../../../assets/images/logo/logo256.png"/>
+  <link rel="stylesheet"
+        href="../../../../../assets/fonts/monaSans/monaSans.css"/>
+  <link rel="stylesheet"       href="../../../../util/reset.css"/>
+  <link rel="stylesheet"       href="../../../../default/default.css"/>
+  <link rel="stylesheet"       href="./timeYourCode.css"/>
+
+  <script type="module"        src="../../../../default/default.js"></script>
+  <script type="module"        src="./timeYourCode.js"></script>
+</head>
+<body>
+  <div class="titleContainer">
+    <div class="titleLeft">
+      <a class="aNoDecoration" href="../../../../../../index.html">
+        <img class="titleLogo"
+             src="../../../../../assets/images/logo/logo256.png"/>
+      </a>
+    </div>
+    <div class="titleMiddle">
+      <div class ="titleText">
+        <span class="smallFont">jsPerf</span>Time Your Code
+      </div>
+    </div>
+    <div class="titleRight"><div class="titleDate">date</div></div>
+  </div> <!-- titleContainer -->
+
+  <div class="middle">
+
+    <div id="descriptionBanner">
+      <div>
+        Compare code times on your own machine using jsPerf.
+        <div class="smallFont">
+        For better results run:
+        <pre> chrome --enable-precise-memory-info</pre>
+        </div>
+      </div>
+      <div class="smallFont">
+        <a href="https://github.com/rg3h/jsPerf">Get jsPerf on github</a>
+      </div>
+    </div>
+
+    <!-- codeTextBox -->
+    Enter or copy-paste your code.
+    <textarea class="codeTextBox" id="codeTextBox1"
+              spellcheck="false" autofocus="true" placeholder="">
+// compare array assignment to push
+let a = [];
+for (let i = 1; i < 10_000; ++i) {
+  a[i] = i;
+}
+    </textarea>
+    <br>
+
+    <!-- optional codeTextBox -->
+    Optionally enter code to compare.
+    <textarea class="codeTextBox" id="codeTextBox2"
+              spellcheck="false" autofocus="true" placeholder="">
+// compare array assignment to push
+let a = [];
+for (let i = 1; i < 10_000; ++i) {
+  a.push(i);
+}
+    </textarea>
+
+    <table id="configTable">
+    <tr>  <!-- warmUpCount -->
+      <td>warm up loops:</td>
+      <td><input type="text" id="warmUpCount" value="1,000"/></td>
+      <td class="smallFont" >
+        these loops run first and are not included in the trial
+      </td>
+    </tr>
+
+    <tr>  <!-- loopCount -->
+      <td>loops per trial:</td>
+      <td><input type="text" id="loopCount" value="10,000"/></td>
+    </tr>
+
+    <tr> <!-- loopIncrement -->
+      <td>loop increment:</td>
+      <td><input type="text" id="loopIncrement" value="1,000"/></td>
+      <td class="smallFont">
+        increments the loops-per-trial.<br>
+        For example loops-per-trial = 1000 and inc = 100 produces
+        trials of 1000, 1100, 1200...
+      </td>
+    </tr>
+
+    <tr> <!-- trialCount -->
+      <td>number of trials:</td>
+      <td><input type="text" id="trialCount" value="10" /></td>
+    </tr>
+    </table>
+    <br>
+
+    Plan for each code section:
+    <div id="plan">plan is inserted here by the js code</div>
+
+    <button id="runExperimentButton">run the experiment!</button><br>
+
+    <div id="errorContainer"></div>
+
+    <div id="progressContainer">
+      <h3>Progress Status</h3>
+      <div id="progressDetails"> </div>
+    </div>
+
+    <div id="resultsContainer">
+      <h2>Results</h2>
+      <div id="results"></div>
+      <button id="showJsonCsvButton">show json & csv</button>
+    </div>
+
+  </div> <!-- middle -->
+</body>
+</html>

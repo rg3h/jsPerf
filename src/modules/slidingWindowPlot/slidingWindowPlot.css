@@ -1,0 +1,7 @@
+/** slidingWindowPlot.css **/
+
+.slidingWindowPlotBar {
+  transition: 0.25s ease x,
+              0.25s ease y,
+              0.25s ease height;
+}

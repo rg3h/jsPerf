@@ -1,0 +1,186 @@
+
+/** jsPerfWidget **/
+:root {
+  --jsPerfWidgetLeftWidth:  170px;
+  --jsPerfWidgetRightWidth: 170px;
+}
+
+.jsPerfWidgetContainer {
+  background-color: white;
+  border-radius: var(--borderRadius);
+  border: var(--border);
+  box-shadow: var(--boxShadow);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: arial;
+  font-size: 14px;
+  gap: 0.5rem;
+  padding: 0 0 0.5rem 0.5rem;
+  position: absolute;
+  right: 2rem;
+  top: 5rem;
+  z-index: 1000;
+}
+
+.jsPerfWidgetTop {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  height: 35px;
+}
+
+.jsPerfWidgetTopLeft {
+  align-items: baseline;
+  display: flex;
+  width: var(--jsPerfWidgetLeftWidth);
+}
+
+.jsPerfWidgetTitle {
+  color: var(--mediumBlue);
+  font-size: 1.2rem;
+}
+
+.jsPerfWidgetVersion {
+  color: rgb(150, 150, 150);
+  font-size: 0.8rem;
+  margin-left: 0.25rem;
+}
+
+.jsPerfWidgetTopRight {
+  align-items: flex-start;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  width: var(--jsPerfWidgetRightWidth);
+}
+
+.jsPerfWidgetMemory {
+  color: var(--mediumBlue);
+  font-size: 1.8rem;
+}
+
+.jsPerfWidgetMemoryTextFont {
+  animation: fadeDownAnim 1.25s ease-in-out 1.25s forwards;
+  color: rgb(255, 70, 0); /* orange */
+  font-size: 1.4rem;
+}
+
+.jsPerfWidgetMemorySmallerFont {
+  color: var(--mediumBlue);
+  font-size: 1.6rem;
+}
+
+.jsPerfWidgetCloseButton {
+  align-items: center;
+  border-radius: 50%;
+  color: rgb(240, 0, 0);
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 1.75rem;
+  justify-content: center;
+  margin-left: 1rem;
+  transition-duration: 0.25s;
+  transition-property: background, box-shadow, color;
+  transition-timing-function: ease-in-out;
+  user-select: none;
+  width: 1.75rem;
+  z-index: 100;
+}
+
+.jsPerfWidgetCloseButton:hover {
+  background: rgb(255, 200, 200);
+  box-shadow: var(--boxShadowHover);
+  color: rgb(250, 0, 0);
+}
+
+.jsPerfWidgetMiddle {
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+  height: 123px;
+
+}
+
+.jsPerfWidgetMiddleLeft {
+  width: var(--jsPerfWidgetLeftWidth);
+  height: calc(100% - 2px);
+}
+
+.jsPerfWidgetPlot {
+  border-radius: var(--borderRadius);
+  border: var(--border);
+  height: 100%;
+  width: 100%;
+}
+
+.jsPerfWidgetMiddleRight {
+  line-height: 1.1rem;
+}
+
+
+.jsPerfWidgetMemoryDiff {
+  color: green;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.jsPerfWidgetMemoryStat {
+  color: var(--mediumBlue);
+  display: flex;
+  font-size: 0.8rem;
+}
+
+.jsPerfWidgetMemoryStatLabel {
+  width: 2rem;
+}
+
+.jsPerfWidgetMemoryMax,
+.jsPerfWidgetMemoryMin,
+.jsPerfWidgetMemoryAvg {
+  text-align: right;
+  width: 4.5rem;
+}
+
+.jsPerfWidgetUpdateCount {
+  color: var(--mediumBlue);
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+.jsPerfWidgetUpdateFreq {
+  color: rgb(150, 150, 150);
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-left: 0.25rem;
+}
+
+.jsPerfWidgetDate {
+  color: var(--mediumBlue);
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.jsPerfWidgetButtonTray {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 1rem 0.5rem 0 0;
+}
+
+.jsPerfWidgetPlayPauseTray,
+.jsPerfWidgetSaveTray {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.jsPerfWidgetPauseButton,
+.jsPerfWidgetResetButton,
+.jsPerfWidgetSaveButton {
+  width: 4rem;
+}

@@ -1,0 +1,51 @@
+/* svgExample.css */
+
+.top {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.topMiddle {
+  align-items: baseline;
+  display: flex;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.stage {
+  margin-top: 2rem;
+}
+
+.svgContainer {
+  background: rgb(220, 250, 220);
+  height: 250px;
+  width: 500px;
+}
+
+.svgCircle {
+  cx: 250px;
+  cy: 50px;
+  r: 10px;
+  fill: red;
+}
+
+.svgEllipse {
+  cx: 200px;
+  cy: 50px;
+  rx: 10px;
+  ry: 20px;
+}
+
+.svgRect {
+  fill: orange;
+}
+
+.svgText {
+  fill: orange;
+  stroke: blue;
+  stroke-width: 1px;
+  font: bold 40px arial;
+}

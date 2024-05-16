@@ -1,0 +1,202 @@
+<!doctype html> <!-- jsPerfWithWeb.html -->
+<html lang="en">
+<head>
+<!--     .--.
+    .-._;.--.;_.-.
+   (_.'_..--.._'._)        _     ____            __
+    /.' . 60 . '.\        (_)___|  _ \ ___ _ __ / _|
+   // .      / . \\       | / __| |_) / _ \ '__| |_
+  |; .      /   . |;      | \__ \  __/  __/ |  |  _|
+  ||45    ()    15||     _/ |___/_|   \___|_|  |_|
+  |; .          . |;    |__/ modules for measuring JS memory & timer
+   \\ .        . //
+    \'._' 30 '_.'/
+jgs  '-._'--'_.-'
+         `""` -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>jsPerf details</title>
+  <meta name="description" content="jsPerf details"/>
+  <meta name="mobile-web-app-capable"       content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="msapplication-tap-highlight"  content="no"  />
+  <link rel="apple-touch-icon"
+        href="../../../../assets/images/logo/logo256.png"/>
+  <link rel="icon"       href="../../../../assets/images/logo/logo256.png"/>
+  <link rel="stylesheet" href="../../../../assets/fonts/monaSans/monaSans.css"/>
+  <link rel="stylesheet" href="../../../util/reset.css"/>
+  <link rel="stylesheet" href="../../../default/default.css"/>
+  <link rel="stylesheet" href="../index.css"/>
+
+  <script type="module"  src="../../../default/default.js"></script>
+</head><body>
+  <div class="titleContainer">
+    <div class="titleLeft">
+      <a class="aNoDecoration" href="../../../../index.html">
+        <img class="titleLogo" src="../../../../assets/images/logo/logo256.png"/>
+      </a>
+    </div>
+    <div class="titleMiddle">jsPerf with the Web</div>
+    <div class="titleRight"><div class="titleDate">date</div></div>
+  </div> <!-- titleContainer -->
+
+  <div class="middle">
+    jsPerf is a simple-to-use JavaScript module that measures memory
+    and speed. It works both in node and on the web and comes with
+    several examples. jsPerf also includes a real-time memory widget
+    so you can observe overall memory behavior.
+    <br>
+
+    <h2>jsPerf API</h2>
+    <table>
+        <tr><td>getName()</td><td>returns the module's name (jsPerf)</td></tr>
+        <tr><td>getVersion()</td><td>returns the module's version</td></tr>
+        <tr><td>supportsMemory()</td>
+          <td>returns true if memory functions are available</td></tr>
+        <tr><td>gcIsAvailable()</td>
+          <td>returns true if jsPerf can call the garbage collector</td></tr>
+        <tr><td>startTime()</td>
+          <td>start the timer, returning start time</td></tr>
+        <tr><td>getTime(startTime)</td><td>get the performance time in
+        seconds or the absolute time if startTime is missing</td></tr>
+        <tr><td>async getMemory()</td><td>get the heap memory used</td></tr>
+    </table>
+
+    <h2>How to Use jsPerf in Web Apps</h2>
+
+    jsPerf uses ES6 modules, making coding easier, but modules require an
+    http(s) server. You can use any local or non-local web server, and
+    for convenience during local development, there is a node-based one
+    included in <pre>./tools</pre>  The example scripts start this
+    server and then chrome with whatever flags are needed.
+    <br><br>
+
+    For jsPerf to perform memory measurements, it needs to run chrome
+    with the flags:
+    <br>
+    <pre>chrome --expose-gc --enable-precise-memory-info</pre>
+
+    <h2>Web Examples</h2>
+
+    <h3>jsPerf Timer Measurements</h3>
+
+    Here is an example that times a for loop:
+    <pre>
+cd src/examples/jsPerfExamples/webExamples/webSimpleTimerExample
+runWebSimpleTimerExample.bat (or .sh)
+    </pre>
+
+    <div class=codeBox>
+import {prettyNum}  from '../../../../modules/math/math.js';
+import {prettyDate} from '../../../../modules/util/util.js';
+import {getName,
+        getVersion,
+        getTime,
+        startTime} from '../../../../modules/jsPerf/jsPerf.js';
+
+function main() {
+  const count = 1_000_000_000;
+
+  let start = startTime();
+  // eslint-disable-next-line no-unused-vars
+  for (let i = 0, sum = 0; i &lt; count; ++i) { sum += i; }
+  let results = getTime(start);
+
+  let msg = '&lt;b&gt;' + getName() + ' v' + getVersion() +
+      ' ' + prettyDate(new Date) + '&lt;/b&gt;&lt;br&gt;' +
+      'time to run for loop ' + prettyNum(count) +
+      ' times: ' + prettyNum(results, 3) + ' seconds';
+
+  document.getElementsByClassName('resultsBox')[0]
+    .textContent = msg;
+}
+
+main();
+    </div>
+
+    output:<br>
+    <pre>
+      jsPerf v1.0.1 Sunday, 31 March 2024 10:38 am
+      time to run for loop 1,000,000,000 times: 0.923 seconds
+    </pre>
+
+    <h3>jsPerf Memory Measurements</h3>
+
+    Here is an example that measures memory allocating a large array:
+    <pre>
+      cd src/examples/jsPerfExamples/webExamples/webSimpleMemoryExample
+      runWebSimpleMemoryExample.bat (or .sh)
+    </pre>
+
+    <div class="codeBox">
+import {prettyNum}  from '../../../../modules/math/math.js';
+import {prettyDate} from '../../../../modules/util/util.js';
+import {getName,
+        getVersion,
+        getMemory}  from '../../../../modules/jsPerf/jsPerf.js';
+
+async function main() {
+  let headerMsg = '&lt;b&gt;webSimpleMemoryExample.js ' + getName() +
+      ' v' + getVersion() + ' ' + prettyDate(new Date) +
+      '&lt;/b&gt;&lt;br&gt;';
+
+  // see the initial heap memory
+  let msg = 'baseline heap used:' +
+      '................................... ' +
+      prettyNum(await getMemory()).padStart(11, ' ') + '&lt;br&gt;';
+
+  let a = new Array(1e7);
+  msg += 'memory after allocating a 10 million item array:...... ' +
+    prettyNum(await getMemory()).padStart(11, ' ') + '&lt;br&gt;';
+
+  a = null; // delete the array
+  msg += 'memory after de-allocating a 10 million item array:... ' +
+    prettyNum(await getMemory()).padStart(11, ' ');
+
+  document.getElementsByClassName('resultsBox')[0]
+    .textContent = headerMsg+msg;
+}
+
+main();
+    </div>
+
+    output:<br>
+    <pre>
+webSimpleMemoryExample.js jsPerf v1.0.1 Sunday, 31 March 2024 11:02 am
+baseline heap used:...................................     708,996
+memory after allocating a 10 million item array:......  40,708,908
+memory after de-allocating a 10 million item array:...     708,948
+    </pre>
+
+    <h3>Other Examples</h3>
+    See the <a href="../examplesTOC.html">example list</a>for more examples.
+    <br>
+
+    <h2>References</h2>
+    <div class="smallFont">
+      <a href="https://www.valentinog.com/blog/node-usage/">
+        <i>Guide: How To Inspect Memory Usage in Node.js</i></a>
+      Valentino Gagliardi, 7Feb20<br>
+
+      <a href="https://deepu.tech/memory-management-in-v8/">
+        <i>Visualizing memory management in V8 Engine</i></a>
+      Deepu K Sasidharan, 27Jan20<br>
+
+      <a href="https://www.thyngster.com/step-by-step-guide-measuring-javascript-memory-usage-on-your-web-pages">
+        <i>Step-by-Step Guide: Measuring JavaScript Memory Usage on
+          Your Web Pages</i></a>
+      Davi Vallego<br>
+
+      <a href="https://www.catchpoint.com/blog/benchmarking-javascript-memory-usage">
+        <i>Benchmarking JavaScript Memory Usage</i></a>
+      catchpoint<br>
+
+      <a href="https://romgrk.com/posts/optimizing-javascript">
+        <i>Optimizing JavaScript</i></a>
+      romgrk<br>
+
+      <a href="https://developer.chrome.com/docs/lighthouse">
+        <i>Google Lighthouse for performance auditing</i></a>
+    </div> <!-- smallFont -->
+  </div> <!-- middle -->
+</body></html>

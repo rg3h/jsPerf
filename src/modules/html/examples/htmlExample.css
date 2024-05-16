@@ -1,0 +1,78 @@
+/** htmlExample.css **/
+
+.top {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.topMiddle {
+  align-items: baseline;
+  display: flex;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.testDiv {
+  background-color: rgb(245, 165, 245);
+  border-radius: 5px;
+  border: solid 2 px red;
+  height: 5rem;
+  padding: 1rem;
+  width: 200px;
+}
+
+.testButton {
+  background-color: rgb(0, 128, 0);
+  border-radius: 5px;
+  border: none;
+  box-shadow: var(--boxShadow);
+  color: white;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-right: 1rem;
+  padding: 5px;
+  text-decoration: none;
+  transition-duration: 0.25s;
+  transition-property: background, box-shadow;
+  transition-timing-function: ease-in-out;
+  user-select: none;
+  width: fit-content;
+}
+
+htmlButton:hover {
+  background-color: rgb(0, 200, 0);
+  box-shadow: var(--boxShadowHover);
+}
+
+
+.testStyle {
+  background-color: orange;
+  border-radius: 5px;
+  border: var(--border);
+  height: 2rem;
+  margin: 2rem 0 2rem 0;
+  width: 200px;
+}
+
+.resultsDiv {
+  margin: 1rem 0 1rem 0;
+  border: solid 1px rgb(220, 220, 220);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+.resultsDivTitle {
+  font-weight: 600;
+}
+
+.resultsDivRowError,
+.resultsDivRow {
+}
+
+.resultsDivRowError {
+  color: red;
+  font-weight: 600;
+}

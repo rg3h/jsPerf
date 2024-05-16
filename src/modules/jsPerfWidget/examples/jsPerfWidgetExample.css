@@ -1,0 +1,79 @@
+/** jsPerfWidgetExample.css **/
+
+.backButton {
+  color: var(--mediumBlue);
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.25s ease-in-out;
+}
+
+.backButton:hover {
+  text-decoration-color: var(--mediumBlue);
+}
+
+.middle {
+  height: 100%;
+}
+
+.jsPerfWidgetPlot {
+  background: transparent;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.memorySection {
+  max-width: 410px;
+  visibility: collapse; // hidden;
+}
+
+.memorySliderContainer {
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.memorySlider {
+  flex-grow: 1;
+}
+
+.memoryButtonList {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.memoryResults {
+  font-size: 1rem;
+}
+
+.slidingWindowPlotBar {
+  transition: 1s ease x,
+              0.5s ease y,
+              0.5s ease height;
+}
+
+.timingSection {
+  max-width: 410px;
+}
+
+.timingSliderContainer {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.timingSlider {
+  flex-grow: 1;
+}
+
+.timingResults {
+  margin-top: 1rem;
+}

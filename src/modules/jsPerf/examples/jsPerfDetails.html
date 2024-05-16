@@ -1,0 +1,282 @@
+<!doctype html> <!-- jsPerfDetails.html -->
+<html lang="en">
+<head>
+<!--     .--.
+    .-._;.--.;_.-.
+   (_.'_..--.._'._)        _     ____            __
+    /.' . 60 . '.\        (_)___|  _ \ ___ _ __ / _|
+   // .      / . \\       | / __| |_) / _ \ '__| |_
+  |; .      /   . |;      | \__ \  __/  __/ |  |  _|
+  ||45    ()    15||     _/ |___/_|   \___|_|  |_|
+  |; .          . |;    |__/ modules for measuring JS memory & timer
+   \\ .        . //
+    \'._' 30 '_.'/
+jgs  '-._'--'_.-'
+         `""` -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>jsPerf details</title>
+  <meta name="description" content="jsPerf details"/>
+  <meta name="mobile-web-app-capable"       content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="msapplication-tap-highlight"  content="no"  />
+  <link rel="apple-touch-icon" href="../../../assets/images/logo/logo256.png"/>
+  <link rel="icon"             href="../../../assets/images/logo/logo256.png"/>
+  <link rel="stylesheet"   href="../../../assets/fonts/monaSans/monaSans.css"/>
+  <link rel="stylesheet"       href="../../util/reset.css"/>
+  <link rel="stylesheet"       href="../../default/default.css"/>
+  <link rel="stylesheet"       href="./index.css"/>
+
+  <script type="module"        src="../../default/default.js"></script>
+</head>
+<body>
+  <div class="titleContainer">
+    <div class="titleLeft">
+      <a class="aNoDecoration" href="../../../../index.html">
+        <img class="titleLogo" src="../../../assets/images/logo/logo256.png"/>
+      </a>
+    </div>
+    <div class="titleMiddle">jsPerf details</div>
+    <div class="titleRight"><div class="titleDate">date</div></div>
+  </div> <!-- titleContainer -->
+
+  <div class="middle">
+    jsPerf is a simple-to-use JavaScript module that measures memory
+    and speed. It works both in node and on the web and comes with
+    several examples. jsPerf also includes a real-time memory widget
+    so you can observe overall memory behavior.
+    <br>
+
+    <br>
+    <a href="https://github.com/rg3h/jsPerf">get jsPerf on github</a>
+    <br>
+
+    <h2>Why jsPerf?</h2>
+
+    Front-end development is complicated. The jsPerf module creates a
+    simple API, provides several examples, and includes a real-time
+    memory widget to illustrate the value of drop-in memory monitoring
+    during development. Answer questions like:
+
+    <div class="centeredQuote" style="color:rgb(30, 140, 0);">
+      "How long did it take to fetch the data, analyze it, and present
+      the results?"
+      <br><br>
+      "Am I freeing memory after I am done with that HTML form?"
+    </div>
+    <br>
+
+    <div class=exampleContainer>
+      <div class="exampleContainerLeft">
+        <h3>jsPerf Memory Example Results</h3>
+        <pre class="whiteBox">
+memory used:...............  4,737,080
+after creating a 10M array: 84,732,544
+after removing a 10M array:  4,732,400</pre>
+        <br>
+
+        <h3>jsPerf Memory Widget Example</h3>
+        <img class="jsPerfMemoryImageWidth"
+             src="../../../assets/images/screenshots/jsPerfWidgetAnim.gif"/>
+        <br><br>
+
+        <button class="bigBlueButton"
+                onpointerup="window.location='../../jsPerfWidget/examples/jsPerfWidgetExample.html'">
+          memory widget demo
+        </button>
+
+        <!--
+        <div class="disabled" style="margin-top:3rem;">
+          <button class="bigBlueButton buttonDisabled" style="padding: 0.25rem"
+                  onpointerup="window.location='./webExamples/memoryMeasureYourCode.html'">
+            measure memory tool
+          </button>
+          <span style="font-size:0.85rem; margin-left:1rem;">coming soon!</span>
+        </div>
+        -->
+
+      </div> <!-- exampleContainerLeft -->
+
+      <div class="exampleContainerRight">
+        <h3>jsPerf Timer Example Results</h3>
+        <pre class="whiteBox ">run for loop 100,000,000 times: 0.09s</pre>
+        <br>
+
+        <h3>Time Your Code Tool</h3>
+        <img class="timeYourCodeImg"
+             src="../../../assets/images/screenshots/timeYourCode.jpg"/>
+        <br><br>
+
+        <button class="bigBlueButton"
+                onpointerup="window.location='./webExamples/timeYourCode/timeYourCode.html'">
+          time your code
+        </button>
+      </div> <!-- exampleContainerRight -->
+    </div> <!-- exampleContainer -->
+    <br>
+
+    <h2>Features</h2>
+    <ul>
+      <li>simple-to-use timer and memory functions</li>
+      <li>runs in node apps and web apps</li>
+      <li>several helpful scripts and examples</li>
+      <li>several support modules (local node server, plotting,
+        prettyNum, etc)</li>
+      <li>a real-time memory widget built using jsPerf</li>
+    </ul>
+
+    <h2>Caveats</h2>
+    <ul>
+      <li>
+        jsPerf is an ES6 module so you will need to run on a server (a local one
+        is provided in ./tools)
+      </li>
+      <li>
+        for node apps, use <pre><b>import</b></pre> rather
+        than <pre><b>require</b></pre> &nbsp; (see the node examples)
+      </li>
+      <li>
+        with memory functions, run the browser
+        using:<br>
+        <pre>  --js-flags="--expose-gc"</pre><br>
+        <pre>  --enable-precise-memory-info</pre>
+      </li>
+      <li>
+      just for <b>memory measurement:</b>
+      W3C's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory">performance.memory</a> has been deprecated and
+
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Performance/measureUserAgentSpecificMemory#browser_compatibility">
+              <span class="smallFont">
+                Performance.measureUserAgentSpecificMemory()</span>
+      </a> is experimental.
+
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Performance/measureUserAgentSpecificMemory#browser_compatibility">
+        Check here for compatibility.</a>
+      </li>
+    </ul>
+
+    <h2>Using jsPerf</h2>
+
+    <h3>jsPerf API</h3>
+    <table>
+        <tr><td>getName()</td><td>returns the module's name (jsPerf)</td></tr>
+        <tr><td>getVersion()</td><td>returns the module's version</td></tr>
+        <tr><td>supportsMemory()</td>
+          <td>returns true if memory functions are available</td></tr>
+        <tr><td>gcIsAvailable()</td>
+          <td>returns true if jsPerf can call the garbage collector</td></tr>
+        <tr><td>startTime()</td>
+          <td>start the timer, returning start time</td></tr>
+        <tr><td>getTime(startTime)</td><td>get the performance time in
+        seconds or the absolute time if startTime is missing</td></tr>
+        <tr><td>async getMemory()</td><td>get the heap memory used</td></tr>
+    </table>
+    <br>
+
+    <h3>Simple Timer Example</h3>
+    <pre>node ./nodeSimpleTimerExample.js</pre>
+    <div class="codeBox">
+      <pre class="preSmall2">
+import { prettyNum }          from './src/modules/util/util.js';
+import { startTime, getTime } from './src/modules/jsPerf/jsPerf.js';
+
+const count = 100_000_000;
+<b>let start = startTime();</b>
+for (let i = 0, sum = 0; i < count; ++i) { sum += i; }
+<b>let results = getTime(start);</b>
+console.log('time to run', prettyNum(count), 'times:',
+prettyNum(results, 3), 's');</pre>
+    </div>
+    <b>output:</b>
+    <pre class="preSmall">time to run 100,000,000 times: 0.094 s</pre>
+
+    <h3>More on jsPerf</h3>
+    <div class="itemList">
+    <a href="./examplesTOC.html">jsPerf examples list</a>
+    <a href="./webExamples/jsPerfWithWeb.html">jsPerf on the web</a>
+    <a href="./nodeExamples/jsPerfWithNode.html">jsPerf on node</a>
+    <a href="https://github.com/rg3h/jsPerf">get jsPerf on github</a>
+    </div>
+
+    <h2>jsPerf Real-Time Memory Widget</h2>
+    This is a widget you can easily add to any page to watch
+    memory performance in real time. It is also a good example using the
+    jsPerf module in a larger analytic tool.
+    <br><br>
+
+    <img style="width:256px;"
+         src="../../../assets/images/screenshots/jsPerfWidgetAnim.gif"/>
+    <br>
+    The widget will reveal:
+    <ul>
+      <li>how memory is fluxuating during the lifetime of the app</li>
+      <li>whether there are memory leaks</li>
+      <li>what actions spike memory</li>
+      <li>what is the overall memory footprint of the app</li>
+    </ul>
+    <br>
+
+    You can see this widget in action by going
+    <a href="../../jsPerfWidget/examples/jsPerfWidgetExample.html">here</a>
+    and the code is in <pre>./src/modules/jsPerfWidget/</pre>
+
+    <h2>jsPerf and Node.js</h2>
+    jsPerf works in <a href="https://nodejs.org">node.js</a> as well
+    as in web apps. <a href="./nodeExamples/jsPerfWithNode.html">learn
+    more about jsPerf with node.js</a>
+
+    <h2>Tools</h2>
+    you can see this documentation locally by:
+    <ul>
+      <li><pre>cd ./tools</pre></li>
+      <li><pre>runServer.bat (.sh)</pre></li>
+      <li>open a browser on localhost:8000</li>
+      <li>when you see "Your connection is not private" click on the
+        Advanced button</li>
+      <li>click on the "Proceed to localhost" link</li>
+    </ul>
+    <br>
+
+    There are also scripts in the example directories to
+    start a server and browser with the right flags.
+
+    <h2>Future Work</h2>
+    <ul>
+      <li>break modules into git subtrees</li>
+      <li>add a task runner (e.g. grunt)</li>
+      <li>write a jsPerf plugin so you can watch any page's dynamic memory footprint
+      <li>save out results to {json, csv} and separately analyze the data</li>
+      <li>describe slidingWindowPlot</li>
+      <li>describe observations on js memory for various apps</li>
+    </ul>
+
+    <h2>References</h2>
+    <div class="smallFont">
+      <a href="https://www.valentinog.com/blog/node-usage/">
+        <i>Guide: How To Inspect Memory Usage in Node.js</i></a>
+      Valentino Gagliardi, 7Feb20<br>
+
+      <a href="https://deepu.tech/memory-management-in-v8/">
+        <i>Visualizing memory management in V8 Engine</i></a>
+      Deepu K Sasidharan, 27Jan20<br>
+
+      <a href="https://www.thyngster.com/step-by-step-guide-measuring-javascript-memory-usage-on-your-web-pages">
+        <i>Step-by-Step Guide: Measuring JavaScript Memory Usage on
+          Your Web Pages</i></a>
+      Davi Vallego<br>
+
+      <a href="https://www.catchpoint.com/blog/benchmarking-javascript-memory-usage">
+        <i>Benchmarking JavaScript Memory Usage</i></a>
+      catchpoint<br>
+
+      <a href="https://romgrk.com/posts/optimizing-javascript">
+        <i>Optimizing JavaScript</i></a>
+      romgrk<br>
+
+      <a href="https://developer.chrome.com/docs/lighthouse">
+        <i>Google Lighthouse for performance auditing</i></a>
+      <br>
+    </div> <!-- smallFont -->
+  </div> <!-- middle -->
+</body>
+</html>

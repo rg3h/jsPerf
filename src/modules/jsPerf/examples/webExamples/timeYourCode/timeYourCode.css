@@ -1,0 +1,131 @@
+/** timeYourCode.css **/
+
+ol     { font-size: 0.75rem; }
+li     { line-height: 0.75rem; }
+button { padding: 0.5rem 1rem 0.5rem 1rem; }
+h2     { margin-top: 0; }
+
+input {
+  background: rgb(240, 245, 255);
+  border: var(--border);
+  min-width: 8rem;
+  padding: 0.2rem 0.5rem 0rem 0.5rem;
+  width: 8rem;
+}
+
+.titleText {
+  align-items: center;
+  display: flex;
+  font-size: min(2rem, 3vw);
+  gap: 0.5rem;
+}
+
+#descriptionBanner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.jsonAndCsvSections {
+  display: none;
+  font-family: Courier New, monospace;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  overflow: auto;
+  resize: none;
+  unicode-bidi: embed;
+  white-space: pre;
+}
+
+.codeTextBox {
+  color: black;
+  display: block;
+  font-family: Courier New, monospace;
+  font-size: 0.8rem;
+  height: 8rem;
+  margin-bottom: 1rem;
+  overflow: auto;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  resize: none;
+  unicode-bidi: embed;
+  white-space: pre;
+  width: 100%;
+}
+
+#codeTextBox1 { background-color: rgb(240, 245, 255); }
+#codeTextBox2 { background-color: rgb(250, 235, 225); }
+
+#configTable {
+  border: none;
+  margin-top: 2rem;
+}
+
+#configTable tr {}
+
+#configTable td {
+  padding: 0 0.5rem 0.5rem 0;
+  vertical-align: middle;
+}
+
+#configTable tr:nth-child(even) {
+  background-color: transparent;
+}
+
+#plan {
+  background: var(--extraExtraLightGreen);
+  border: solid 1px var(--extraLightGreen);
+  color: var(--darkGreen);
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+  padding: 0.5rem;
+}
+
+#errorContainer {
+  border-radius: var(--borderRadius);
+  border: solid 1px red;
+  color: red;
+  display: none;
+  font-size: 1.25rem;
+  margin: 1.5rem 0 1.5rem 0;
+  padding: 0.5rem;
+  width: fit-content;
+}
+
+#progressContainer {
+  visibility: hidden;
+}
+
+#progressDetails {
+  color: var(--mediumGreen);
+  display: block;
+  font-family: Courier New, monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  overflow: auto;
+  padding-left: 1rem;
+  resize: none;
+  unicode-bidi: embed;
+  white-space: pre;
+  width: 100%;
+}
+
+#resultsContainer {
+  border-radius: var(--borderRadius);
+  border: var(--border);
+  display: none;
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+#results {
+  display: block;
+  font-size: 0.9rem;
+  overflow: auto;
+  width: 100%;
+}
+
+#resultLine {
+  font-size: 1rem;
+  margin: 0.5rem 0 1rem 0;
+}

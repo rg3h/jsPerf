@@ -1,0 +1,27 @@
+{
+  "name": "jsperf",
+  "version": "1.1.0",
+  "description": "js time and memory performance measurement",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rg3h/jsPerf.git"
+  },
+  "keywords": [
+    "timing",
+    "memory",
+    "measurement",
+    "js",
+    "javascript"
+  ],
+  "author": "rcg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rg3h/jsPerf/issues"
+  },
+  "homepage": "https://github.com/rg3h/jsPerf/index.html"
+}

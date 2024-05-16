@@ -1,0 +1,84 @@
+/** linePlotExample.css **/
+
+.top {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.topMiddle {
+  align-items: baseline;
+  display: flex;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.gridContainer {
+  column-gap: 16px;
+  display: grid;
+  grid-template-columns: 300px 200px 200px;
+  grid-auto-rows: 300px;
+  margin-top: 1.5rem;
+  row-gap: 16px;
+}
+
+.plotContainer {
+  align-items: center;
+  background: var(--lightPurple);
+  border-radius: 5px;
+  border: var(--border);
+  box-shadow: 5px 5px 5px var(--grey200);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 1rem;
+}
+
+.plotContainer:last-child {
+  margin: 0;
+}
+
+.plotMsg {
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.plot01 {
+  background: rgb(245, 240, 220);
+  border: var(--border);
+  height: 100%;
+  width: 100%;
+}
+
+.plot02 {
+  background: rgb(200, 255, 200);
+  border: var(--border);
+  height: 100%;
+  width: 100%;
+}
+
+.plot03 {
+  background: white;
+  border: var(--border);
+  height: 100%;
+  width: 100%;
+}
+
+.plot04 {
+  border-bottom: solid 1px black;
+  border-left: solid 1px black;
+  height: 100%;
+  width: 100%;
+}
+
+.plot05 {
+  background: black;
+  border: var(--border);
+  border-radius: 5px;
+  height: 50%;
+  width: 100%;
+}

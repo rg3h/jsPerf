@@ -1,0 +1,128 @@
+<!DOCTYPE html> <!-- jsPerf index.html -->
+<html lang="en">
+<head>
+<!--     .--.
+    .-._;.--.;_.-.
+   (_.'_..--.._'._)        _     ____            __
+    /.' . 60 . '.\        (_)___|  _ \ ___ _ __ / _|
+   // .      / . \\       | / __| |_) / _ \ '__| |_
+  |; .      /   . |;      | \__ \  __/  __/ |  |  _|
+  ||45    ()    15||     _/ |___/_|   \___|_|  |_|
+  |; .          . |;    |__/ modules for measuring JS memory & timer
+   \\ .        . //
+    \'._' 30 '_.'/
+jgs  '-._'--'_.-'
+         `""` -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>jsPerf</title>
+  <meta name="description"
+        content="jsPerf - modules for measuring JS memory and timer"/>
+  <meta name="mobile-web-app-capable"       content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="msapplication-tap-highlight"  content="no"  />
+  <link rel="apple-touch-icon" href="../../../assets/images/logo/logo256.png"/>
+  <link rel="icon"             href="../../../assets/images/logo/logo256.png"/>
+  <link rel="stylesheet"   href="../../../assets/fonts/monaSans/monaSans.css"/>
+  <link rel="stylesheet"       href="../../util/reset.css"/>
+  <link rel="stylesheet"       href="../../default/default.css"/>
+  <link rel="stylesheet"       href="./index.css"/>
+
+  <script type="module"        src="../../default/default.js"></script>
+</head>
+<body>
+  <div class="middle">
+    <div class="titleContainer">
+      <div class="titleLeft">
+        <img class="titleLogo" src="../../../assets/images/logo/logo256.png"/>
+        <div>
+          <span class=titleText>jsPerf</span> <span class=version>v1.1.0</span>
+          <div class="titleQuoteWide">  <!--- wide device -->
+            simple-to-use JavaScript timer and memory module
+          </div> <!-- titleQuoteWide -->
+          <div class="titleQuoteNarrow">  <!--- narrow device -->
+            JS timer and memory
+          </div> <!-- titleQuoteNarrow -->
+        </div>  <!-- container for title and quote -->
+      </div>  <!-- titleLeft -->
+      <div class="titleRight"><div class="titleDate">date</div></div>
+    </div> <!-- titleContainer -->
+
+    jsPerf is a simple-to-use JavaScript module that measures memory
+    and speed. It works both in node and on the web and comes with
+    several examples. jsPerf also includes a real-time memory widget
+    so you can observe overall memory behavior.
+    <br><br>
+
+    <div class=exampleContainer>
+      <div class="exampleContainerLeft">
+        <h3>jsPerf Memory Example Results</h3>
+        <pre class="whiteBox">
+memory used:...............  4,737,080
+after creating a 10M array: 84,732,544
+after removing a 10M array:  4,732,400</pre>
+        <br>
+
+        <h3>jsPerf Memory Widget Example</h3>
+        <img class="jsPerfMemoryImageWidth"
+             src="../../../assets/images/screenshots/jsPerfWidgetAnim.gif"/>
+        <br><br>
+
+        <button class="bigBlueButton"
+                onpointerup="window.location='../../jsPerfWidget/examples/jsPerfWidgetExample.html'">
+          memory widget demo
+        </button>
+
+        <!--
+        <div class="disabled" style="margin-top:3rem;">
+          <button class="bigBlueButton buttonDisabled" style="padding: 0.25rem"
+                  onpointerup="window.location='./webExamples/memoryMeasureYourCode.html'">
+            measure memory tool
+          </button>
+          <span style="font-size:0.85rem; margin-left:1rem;">coming soon!</span>
+        </div>
+        -->
+
+      </div> <!-- exampleContainerLeft -->
+
+      <div class="exampleContainerRight">
+        <h3>jsPerf Timer Example Results</h3>
+        <pre class="whiteBox ">run for loop 100,000,000 times: 0.09s</pre>
+        <br>
+
+        <h3>Time Your Code Tool</h3>
+        <img class="timeYourCodeImg"
+             src="../../../assets/images/screenshots/timeYourCode.jpg"/>
+        <br><br>
+
+        <button class="bigBlueButton"
+                onpointerup="window.location='./webExamples/timeYourCode/timeYourCode.html'">
+          time your code
+        </button>
+      </div> <!-- exampleContainerRight -->
+    </div> <!-- exampleContainer -->
+    <br>
+
+    <!--
+    <div class="itemList buttonList" style="align-items:top">
+      <div style="text-align:center;">
+        <button class="bigBlueButton buttonDisabled" style="padding: 0.25rem"
+                onpointerup="window.location='./webExamples/memoryMeasureYourCode.html'">
+          measure memory
+        </button>
+        <div style="font-size: 0.85rem;">coming soon!</div>
+      </div>
+    </div> <!-- itemList buttonList
+    -->
+
+    <h2>Learn More</h2>
+    <div class="itemList">
+      <a href="./jsPerfDetails.html">               jsPerf details</a>
+      <a href="./examplesTOC.html">                 list of jsPerf examples</a>
+      <a href="./webExamples/jsPerfWithWeb.html">   jsPerf on the web</a>
+      <a href="./nodeExamples/jsPerfWithNode.html"> jsPerf with node</a>
+      <a href="https://github.com/rg3h/jsPerf">     jsPerf on github</a>
+    </div>
+  </div> <!-- middle -->
+</body>
+</html>

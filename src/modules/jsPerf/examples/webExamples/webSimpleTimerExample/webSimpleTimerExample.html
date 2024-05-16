@@ -1,0 +1,80 @@
+<!doctype html> <!-- jsPerf webSimpleTimerExample.html -->
+<html lang="en">
+<head>
+<!--     .--.
+    .-._;.--.;_.-.
+   (_.'_..--.._'._)        _     ____            __
+    /.' . 60 . '.\        (_)___|  _ \ ___ _ __ / _|
+   // .      / . \\       | / __| |_) / _ \ '__| |_
+  |; .      /   . |;      | \__ \  __/  __/ |  |  _|
+  ||45    ()    15||     _/ |___/_|   \___|_|  |_|
+  |; .          . |;    |__/ modules for measuring JS memory & timer
+   \\ .        . //
+    \'._' 30 '_.'/
+jgs  '-._'--'_.-'
+         `""` -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>jsPerf details</title>
+  <meta name="description" content="jsPerf details"/>
+  <meta name="mobile-web-app-capable"       content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="msapplication-tap-highlight"  content="no"  />
+  <link rel="apple-touch-icon"
+        href="../../../../../assets/images/logo/logo256.png"/>
+  <link rel="icon"       href="../../../../../assets/images/logo/logo256.png"/>
+  <link rel="stylesheet" href="../../../../../assets/fonts/monaSans/monaSans.css"/>
+  <link rel="stylesheet" href="../../../../util/reset.css"/>
+  <link rel="stylesheet" href="../../../../default/default.css"/>
+  <link rel="stylesheet" href="../../index.css"/>
+
+  <script type="module"  src="../../../../default/default.js"></script>
+</head>
+<body>
+  <div class="titleContainer">
+    <div class="titleLeft">
+      <a class="aNoDecoration" href="../../../../../index.html">
+        <img class="titleLogo" src="../../../../../assets/images/logo/logo256.png"/>
+      </a>
+    </div>
+    <div class="titleMiddle">jsPerf with the Web</div>
+    <div class="titleRight"><div class="titleDate">date</div></div>
+  </div> <!-- titleContainer -->
+
+  <div class="middle">
+    <h2>Simple Timer Example</h2>
+
+    <div class=codeBox>
+import {prettyNum}  from '../../../../modules/math/math.js';
+import {prettyDate} from '../../../../modules/util/util.js';
+import {getName,
+        getVersion,
+        getTime,
+        startTime} from '../../../../modules/jsPerf/jsPerf.js';
+
+function main() {
+  const count = 1_000_000_000;
+
+  let start = startTime();
+  // eslint-disable-next-line no-unused-vars
+  for (let i = 0, sum = 0; i &lt; count; ++i) { sum += i; }
+  let results = getTime(start);
+
+  let msg = '&lt;b&gt;' + getName() + ' v' + getVersion() +
+      ' ' + prettyDate(new Date) + '&lt;/b&gt;&lt;br&gt;' +
+      'time to run for loop ' + prettyNum(count) +
+      ' times: ' + prettyNum(results, 3) + ' seconds';
+
+  document.getElementsByClassName('resultsBox')[0].textContent = msg;
+}
+
+main();
+    </div>
+
+    <br>
+    <b>output:</b>
+    <div class="resultsBox"></div>
+    <script type="module" src="./webSimpleTimerExample.js"></script>
+  </div> <!-- middle -->
+</body>
+</html>
