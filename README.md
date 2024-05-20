@@ -3,12 +3,23 @@
 <br>
 
 jsPerf is a simple-to-use JavaScript module that measures memory and code speed.
-It works both in node and on the web and comes with several examples. 
+It works both in node and on the web and comes with several examples.
 jsPerf also includes a real-time memory widget so you can observe overall memory behavior.
 <br>
 
 <table>
   <tr>
+    <td valign="top">
+      <b>jsPerf Timer Example Results</b>
+      <br>
+      <pre>time to run 100,000,000 for loop: 0.094s<br><br><br></pre>
+      <br>
+      <b>Time Your Code Tool</b><br>
+      <img width="250" src="./src/assets/images/screenshots/timeYourCode.jpg" alt="time your code tool" />
+      <br><br>
+      <a href="https://rg3h.github.io/jsPerf/src/modules/jsPerf/examples/webExamples/timeYourCode/timeYourCode.html">time your code tool</a>
+      <br><br>
+    </td>
     <td valign="top">
       <b>Example Memory Example Results</b>
       <br>
@@ -20,17 +31,6 @@ memory after removing 10M array:  4,732,400</pre>
       <img width="250" src="./src/assets/images/screenshots/jsPerfWidgetAnim.gif" alt="animated jsPerf widget" />
       <br><br>
       <a href="https://rg3h.github.io/jsPerf/src/modules/jsPerfWidget/examples/jsPerfWidgetExample.html">memory widget demo</a>
-    </td>
-    <td valign="top">
-      <b>jsPerf Timer Example Results</b>
-      <br>
-      <pre>time to run 100,000,000 for loop: 0.094s<br><br><br></pre>
-      <br>
-      <b>Time Your Code Tool</b><br>
-      <img width="250" src="./src/assets/images/screenshots/timeYourCode.jpg" alt="time your code tool" />
-      <br><br>
-      <a href="https://rg3h.github.io/jsPerf/src/modules/jsPerf/examples/webExamples/timeYourCode/timeYourCode.html">time your code tool</a>
-      <br><br>
     </td>
   </tr>
 </table>
