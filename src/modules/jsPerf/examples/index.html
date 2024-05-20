@@ -50,30 +50,37 @@ jgs  '-._'--'_.-'
     and code execution speed. It works both in node and on the web and
     comes with several examples. jsPerf also includes a real-time
     memory widget so you can observe overall memory behavior.
-    <br><br>
+    &nbsp; JsPerf is open source on
+    <a href="https://github.com/rg3h/jsPerf">github</a>
+    <br>
 
-    <div class=exampleContainer>
+    <div class=exampleContainer style="margin-top:2rem">
       <div class="exampleContainerLeft">
+        <h3>jsPerf Timer Example Results</h3>
+        <pre class="whiteBox">run for loop 100,000,000 times: 0.09s</pre>
+
+        <h3 style="margin-top:3rem">Time Your Code Tool</h3>
+        <img class="timeYourCodeImg"
+             src="../../../assets/images/screenshots/timeYourCode.jpg"/>
+
+        <button class="bigBlueButton" style="margin-top:1rem"
+                onpointerup="window.location='./webExamples/timeYourCode/timeYourCode.html'">
+          time your code tool
+        </button>
+        <hr style="margin-top:2rem">
+      </div> <!-- exampleContainerLeft -->
+
+      <div class="exampleContainerRight">
         <h3>jsPerf Memory Example Results</h3>
         <pre class="whiteBox">
 memory used:...............  4,737,080
 after creating a 10M array: 84,732,544
 after removing a 10M array:  4,732,400</pre>
-        <br>
-
-        <h3>jsPerf Memory Widget Example</h3>
-        <img class="jsPerfMemoryImageWidth"
-             src="../../../assets/images/screenshots/jsPerfWidgetAnim.gif"/>
-        <br><br>
-
-        <button class="bigBlueButton"
-                onpointerup="window.location='../../jsPerfWidget/examples/jsPerfWidgetExample.html'">
-          memory widget demo
-        </button>
 
         <!--
-        <div class="disabled" style="margin-top:3rem;">
-          <button class="bigBlueButton buttonDisabled" style="padding: 0.25rem"
+        <div class="disabled">
+          <button class="bigBlueButton buttonDisabled"
+                  style="margin-top:0rem; padding: 0.25rem"
                   onpointerup="window.location='./webExamples/memoryMeasureYourCode.html'">
             measure memory tool
           </button>
@@ -81,38 +88,24 @@ after removing a 10M array:  4,732,400</pre>
         </div>
         -->
 
-        <br><br><br>
-        <hr>
-      </div> <!-- exampleContainerLeft -->
-
-      <div class="exampleContainerRight">
-        <h3>jsPerf Timer Example Results</h3>
-        <pre class="whiteBox ">run for loop 100,000,000 times: 0.09s</pre>
-        <br>
-
-        <h3>Time Your Code Tool</h3>
-        <img class="timeYourCodeImg"
-             src="../../../assets/images/screenshots/timeYourCode.jpg"/>
-        <br><br>
+        <h3 style="margin-top:3rem">Memory Widget Example</h3>
+        <img class="jsPerfMemoryImageWidth"
+             src="../../../assets/images/screenshots/jsPerfWidgetAnim.gif"/>
 
         <button class="bigBlueButton"
-                onpointerup="window.location='./webExamples/timeYourCode/timeYourCode.html'">
-          time your code tool
+                style="margin-top: 1rem"
+                onpointerup="window.location='../../jsPerfWidget/examples/jsPerfWidgetExample.html'">
+          memory widget demo
         </button>
-
-        <br><br>
-        <hr>
-
+        <hr style="margin-top:5.5rem">
       </div> <!-- exampleContainerRight -->
     </div> <!-- exampleContainer -->
 
     <h2>Learn More</h2>
-    <div class="itemList">
-      <a href="./jsPerfDetails.html">               jsPerf details</a>
-      <a href="./examplesTOC.html">                 list of jsPerf examples</a>
-      <a href="./webExamples/jsPerfWithWeb.html">   jsPerf on the web</a>
-      <a href="./nodeExamples/jsPerfWithNode.html"> jsPerf with node</a>
-      <a href="https://github.com/rg3h/jsPerf">     jsPerf on github</a>
+    <div style="display:flex;flex-direction:row;flex-wrap:wrap;gap:0.5rem;">
+      <a href="./jsPerfDetails.html">details</a>
+      <a href="./examplesTOC.html">list of examples</a>
+      <a href="https://github.com/rg3h/jsPerf">github</a>
     </div>
   </div> <!-- middle -->
 </body>

@@ -343,13 +343,6 @@ li {line-height: 2rem;}
 
 .titleQuoteNarrow {display: none;} /* don't show on narrow devices */
 
-.centeredQuote {
-  color: rgb(110, 110, 110);
-  font-size: 1.25rem;
-  margin: 1rem 0 1rem 0;
-  text-align: center;
-}
-
 .version {
   display: inline-block;
   font-size: var(--fontSizeSmall);

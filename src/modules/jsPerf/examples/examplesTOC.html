@@ -42,84 +42,51 @@ jgs  '-._'--'_.-'
 
   <div class="middle">
     jsPerf is a simple-to-use JavaScript module that measures memory
-    and speed. It works both in node and on the web and comes with
-    several examples. jsPerf also includes a real-time memory widget
-    so you can observe overall memory behavior.
-    <br>
+    and code execution speed. &nbsp; JsPerf is open source on
+    <a href="https://github.com/rg3h/jsPerf">github</a>
+    <br><br>
+
+    For <b>memory</b> measurements, be sure that you are either using
+    <pre>webExamples/runWebExamples.{bat|sh}</pre> or are running a
+    local web server and chrome with the correct memory flags. For example:
+    <br><br>
+
+    <div style="display: flex;
+                flex-wrap: wrap;
+                font-family: Courier New, monospace;
+                font-size: 0.95rem;
+                line-height: 1.25rem;
+                margin: 0 0 1rem 2rem;">
+
+<span>chrome --js-flags="--expose-gc" </span>
+<span>--enable-precise-memory-info </span>
+<span>"https://localhost:8000/... </span>
+<span>.../webSimpleTimerExample.html"</span>
+    </div>
+
 
     <h2>Web Examples</h2>
-
-    <h3>timer examples</h3>
     <ul>
       <li><a href="./webExamples/webSimpleTimerExample/webSimpleTimerExample.html">simple timer example</a></li>
 
       <li><a href="./webExamples/webContinuousTimerExample/webContinuousTimerExample.html">continuous timer example</a></li>
 
-      <li><a href="./webExamples/timeYourCode/timeYourCode.html">
-          time your code tool</a> -- online tool to compare code timing</li>
-    </ul>
-    <br>
+      <li><a href="./webExamples/timeYourCode/timeYourCode.html">time your code tool</a></li>
 
-    <h3>memory examples</h3>
-    For <b>memory</b> measurements, be sure that you are either using
-    <pre>webExamples/runWebExamples.{bat|sh}</pre> or are running a
-    local web server on port 8000 and chrome with the correct memory
-    flags. For example:
-    <br><br>
-
-    <div style="display:flex;justify-content:center;">
-      <pre class="smallFont">
-chrome --js-flags="--expose-gc" --enable-precise-memory-info \
-"https://localhost:8000/.../webSimpleTimerExample.html"
-      </pre>
-    </div>
-
-    <ul>
       <li><a href="./webExamples/webSimpleMemoryExample/webSimpleMemoryExample.html">simple memory example</a></li>
       <li><a href="./webExamples/webContinuousMemoryExample/webContinuousMemoryExample.html">continuous memory example</a></li>
 
-<!--
-      <li class="disabled">
-        <a style="color:var(--grey100);"
-           href="./webExamples/memoryYourCode/memoryYourCode.html">
-          memory measurement tool </a> (coming soon!)
-      </li>
--->
+      <li><a href="../../jsPerfWidget/examples/jsPerfWidgetExample.html">jsPerf widget example</a></li>
     </ul>
-    <br>
-
-    <h3>jsPerf widget example</h3>
-    The jsPerf widget is js/css that you can easily include
-    in your app. It will create a small container that shows
-    performance metrics.  You will still need to run with the chrome
-    flags, but it makes it easy to monitor and measure application
-    performance.
-    <br><br>
-
-    <div style="display:flex;justify-content:center;">
-      <pre class="smallFont">
-node .../tools/server/simpleServer.js --webroot "../../"
-chrome --js-flags="--expose-gc" --enable-precise-memory-info \
-"https://localhost:8000/.../jsPerfWidgetExample.html"
-      </pre>
-    </div>
-
-    <a href="../../jsPerfWidget/examples/jsPerfWidgetExample.html">jsPerf widget example</a> (memory use)</a>
-
 
     <h2>Node Examples</h2>
 
-    Just as there are timing and memory examples for the web, there
-    are similar jsPerf examples for node. With node, you will
-    use <b>include</b> rather than the older <b>require</b> since
-    jsPerf is an ES6 style module.
+    Just as there are examples for the web, there
+    are similar examples for node.
     <br><br>
-    cd into <pre>
-src/modules/jsPerf/examples/nodeExamples<br></pre>
+    <pre class="smallFont">cd src/modules/jsPerf/examples/nodeExamples</pre>
     to explore the examples.
     <br><br>
-
-    <a href="https://github.com/rg3h/jsPerf">get jsPerf on github</a>
 
   </div> <!-- middle -->
 </body>
