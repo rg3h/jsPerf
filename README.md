@@ -24,7 +24,7 @@ memory after removing 10M array:  4,732,400</pre>
     <td valign="top">
       <b>jsPerf Timer Example Results</b>
       <br>
-      <pre>time to run a 100,000,000 for loop: 0.094s<br><br><br></pre>
+      <pre>time to run 100,000,000 for loop: 0.094s<br><br><br></pre>
       <br>
       <b>Time Your Code Tool</b><br>
       <img width="250" src="./src/assets/images/screenshots/timeYourCode.jpg" alt="time your code tool" />
