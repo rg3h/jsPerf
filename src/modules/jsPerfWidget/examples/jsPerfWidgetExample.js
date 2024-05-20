@@ -31,8 +31,8 @@ function showMemoryResults() {
 
     let resultsEle = document.getElementsByClassName('memoryResults')[0];
     resultsEle.style.color = 'red';
-    let msg = 'This browser does not support the memory monitoring functions.';
-    // resultsEle.textContent = msg;
+    let msg = 'This browser does not support the javascript ' +
+        'memory monitoring functions.';
     resultsEle.innerHTML = '<br>' + msg;
   }
 

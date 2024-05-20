@@ -48,11 +48,20 @@ jgs  '-._'--'_.-'
         The jsPerf memory widget measures heap memory over time.
 
         To try it out, set the slider and click the create button.
-        <br><br>
-        Note that if you do not run chrome with<br>
-        <pre style="text-align:center;width:100%;">chrome --js-flags="--expose-gc"</pre><br>
-        then jsPerf cannot call the garbage collector and
-        you may have to wait a bit to see the memory reset.
+
+        <div class="beigeBox" id="runCommandInfo">
+       Note that you should run jsPerf memory measurements with:
+       <br><br>
+       <pre class="noShowIfNarrow">
+chrome --js-flags="--expose-gc" --enable-precise-memory-info"</pre>
+       <pre class="showIfNarrow">
+chrome --js-flags="--expose-gc" \
+       --enable-precise-memory-info"</pre>
+       <br>
+       Then jsPerf is more accurate and can call the garbage
+       collector immediately. Otherwise you may have to wait a bit to
+       see the memory reset.
+        </div>
       </div>
 
       <div class="memorySliderContainer">

@@ -12,6 +12,10 @@
   text-decoration-color: var(--mediumBlue);
 }
 
+#runCommandInfo {
+  margin: 2rem 0 2rem 0;
+}
+
 .middle {
   height: 100%;
 }

@@ -12,8 +12,8 @@
   --fontFamilyExtraLight:  monaSansExtraLight;
 
   --fontSize:              15px;
-  --fontSizeSmall:         0.9rem;
-  --fontSizeVerySmall:     0.8rem;
+  --fontSizeSmall:         0.85rem;
+  --fontSizeExtraSmall:    0.75rem;
 
   --border:                solid 1px var(--grey200);
   --borderTransparent:     solid 1px transparent;
@@ -50,6 +50,8 @@
   --orange:                rgb(250, 150,   0);
   --lightOrange:           rgb(250, 200, 100);
   --extraLightOrange:      rgb(255, 235, 200);
+  --beige:                 rgb(255, 250, 235);
+  --darkBeige:             rgb(220, 190, 120);
 
   --darkYellow:            rgb(235, 235,  35);
   --lightYellow:           rgb(255, 255, 130);
@@ -180,17 +182,29 @@ tr:nth-child(even) {background-color: rgb(240, 240, 240);}
 ul {margin-top: 0.5rem;}
 li {line-height: 2rem;}
 
-.blueBox, .whiteBox {
+.beigeBox, .blueBox, .greenBox, .whiteBox {
   border-radius: var(--borderRadius);
+  color: black;
   display: block;
   font-size: var(--fontSizeSmall);
-  padding: 1rem;
+  margin: 0 0 1rem 0;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   width: fit-content;
+}
+
+.beigeBox {
+  background-color: var(--beige);
+  border: solid 1px var(--darkBeige);
 }
 
 .blueBox {
   background: var(--extraLightBlue);
   border: solid 1px var(--mediumBlue);
+}
+
+.greenBox {
+  background-color: var(--extraExtraLightGreen);
+  border: solid 1px rgb(205, 230, 205);
 }
 
 .whiteBox {
@@ -459,10 +473,16 @@ button:hover, .button:hover, .bigBlueButton:hover {
 
 .itemDescription {}
 
-/* detect narrow */
+/* detect a narrow window */
 @media screen and (max-width: 600px) {
-  .titleQuoteNarrow {display: block;}
-  .titleQuoteWide   {display: none;}
+  .noShowIfNarrow {display: none;}
+  .showIfNarrow {display: block;}
+}
+
+/* detect not a narrow window */
+@media screen and (min-width: 601px) {
+  .noShowIfNarrow {display: block;}
+  .showIfNarrow {display: none;}
 }
 
 /* detect phone */

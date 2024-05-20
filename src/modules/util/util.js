@@ -1,15 +1,17 @@
 // @fileoverview util.js
 
 export {
-  getVersion, // the version of util.js
-  isBrowser,  // true if running in a browser
-  isNode,     // true if running as a node script
-  prettyDate, // formats the date to be more readable
-  saveFile,   // saves text to a file
-  sleep,      // async sleep in seconds: await sleep(3.5) sleeps 3.5 seconds
+  flatten,     // flattens parameters and arrays into one array
+  getVersion,  // the version of util.js
+  isBrowser,   // true if running in a browser
+  isNode,      // true if running as a node script
+  prettyDate,  // formats the date to be more readable
+  saveFile,    // saves text to a file
+  scrollToEle, // scrolls to an element (smooth by default)
+  scrollToEleByName, // scrolls to an element (smooth by default)
+  sleep,       // async sleep in seconds: await sleep(3.5) sleeps 3.5 seconds
   updateOnTheMinute, // call a function at the top of the minute
 }
-
 
 /*private*/ const longMonthNameList = [
   'January','February','March','April','May','June','July',
@@ -25,6 +27,11 @@ export {
   'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
 ];
 
+
+// returns a flattened array of passed in arguments, including nested arrays
+/*export*/ function flatten(/*arguments*/) {
+  return [...arguments].flat(Infinity);
+}
 
 /*export*/ function getVersion() {
   return '2.0.1';
@@ -99,10 +106,19 @@ export {
   setTimeout(() => {updateOnTheMinute(updateFn)}, ms);
 }
 
+/* export */ function scrollToEle(ele, smoothFlag=true, displayStyle=null) {
+  if (!ele) { return; }
 
-// returns a flattened array of passed in arguments, including nested arrays
-/*export*/ function flatten(/*arguments*/) {
-//  const args = [...arguments];
-//  return args.flat(Infinity);
-  return [...arguments].flat(Infinity);
+  if (displayStyle) {
+    ele.style.display = displayStyle;
+    ele.style.visible = 'visible';
+    ele.style.opacity = 1.0;
+  }
+
+  smoothFlag ? scroll({top: ele.offsetTop, behavior: 'smooth'}) :
+    scroll({top: ele.offsetTop});
+}
+
+/* export */ function scrollToEleByName(eleName, smoothFlag=true) {
+  scrollToEle(document.getElementById(eleName), smoothFlag);
 }

@@ -6,11 +6,16 @@ button { padding: 0.5rem 1rem 0.5rem 1rem; }
 h2     { margin-top: 0; }
 
 input {
-  background: rgb(240, 245, 255);
+  background: var(--extraLightBlue);
   border: var(--border);
-  min-width: 8rem;
+  border-radius: var(--borderRadius);
+  min-width: 7.1rem;
   padding: 0.2rem 0.5rem 0rem 0.5rem;
-  width: 8rem;
+  width: 7.1rem;
+}
+
+*:focus {
+  outline: solid 1px black;
 }
 
 .titleText {
@@ -20,29 +25,30 @@ input {
   gap: 0.5rem;
 }
 
-#descriptionBanner {
+#descriptionContainer {
   display: flex;
+  row-gap: 2rem;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin: 0 0 1rem 0;
 }
 
-.jsonAndCsvSections {
-  display: none;
-  font-family: Courier New, monospace;
-  font-size: 0.8rem;
-  margin-top: 1rem;
-  overflow: auto;
-  resize: none;
-  unicode-bidi: embed;
-  white-space: pre;
+#descriptionLeft {}
+
+#descriptionRight {
+  font-size: var(--fontSizeSmall);
+  text-align: right;
+  min-width: 8rem;
 }
 
 .codeTextBox {
+  background-color: var(--extraLightBlue);
+  border: var(--border);
+  border-radius: var(--borderRadius);
   color: black;
   display: block;
   font-family: Courier New, monospace;
   font-size: 0.8rem;
-  height: 8rem;
+  height: 9.5rem;
   margin-bottom: 1rem;
   overflow: auto;
   padding: 0.5rem 1rem 0.5rem 1rem;
@@ -52,18 +58,27 @@ input {
   width: 100%;
 }
 
-#codeTextBox1 { background-color: rgb(240, 245, 255); }
-#codeTextBox2 { background-color: rgb(250, 235, 225); }
+#configContainer {
+  border: var(--border);
+  border-radius: var(--borderRadius);
+  margin: 2rem 0 2rem 0;
+  overflow: hidden;
+  padding: 1rem;
+  transition-delay: 0s;
+  transition-duration: 0.25s;
+  transition-property: height;
+  transition-timing-function: ease-in-out;
+}
 
 #configTable {
   border: none;
-  margin-top: 2rem;
+  overflow: hidden;
 }
 
 #configTable tr {}
 
 #configTable td {
-  padding: 0 0.5rem 0.5rem 0;
+  padding: 0.1rem 0.5rem 0.5rem 0;
   vertical-align: middle;
 }
 
@@ -71,13 +86,27 @@ input {
   background-color: transparent;
 }
 
+#advancedButton {
+  border: var(--border);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+#advancedButton:hover {
+  box-shadow: var(--boxShadowHover);
+}
+
+.advancedInput {
+  display: 'table-row';
+  opacity: 1;
+  transition-delay: 0s;
+  transition-duration: 0.25s;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+}
+
 #plan {
-  background: var(--extraExtraLightGreen);
-  border: solid 1px var(--extraLightGreen);
-  color: var(--darkGreen);
-  font-size: 0.9rem;
-  margin: 0 0 1rem 0;
-  padding: 0.5rem;
+  width: 100%;
 }
 
 #errorContainer {
@@ -92,12 +121,12 @@ input {
 }
 
 #progressContainer {
-  visibility: hidden;
+  display: none;
+  margin-top: 1rem;
 }
 
-#progressDetails {
+#progressItem {
   color: var(--mediumGreen);
-  display: block;
   font-family: Courier New, monospace;
   font-size: 0.8rem;
   font-weight: 600;
@@ -118,14 +147,29 @@ input {
   width: 100%;
 }
 
-#results {
+#resultsItem {
   display: block;
   font-size: 0.9rem;
   overflow: auto;
   width: 100%;
 }
 
-#resultLine {
+#resultsDate {
+  font-size: var(--smallFont);
+  margin: 0 0 1rem 0;
+}
+
+#resultSummaryLine {
   font-size: 1rem;
-  margin: 0.5rem 0 1rem 0;
+  margin: 0;
+}
+
+.jsonAndCsvContainer {
+  font-family: Courier New, monospace;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  overflow: auto;
+  resize: none;
+  unicode-bidi: embed;
+  white-space: pre;
 }

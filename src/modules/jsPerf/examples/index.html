@@ -37,21 +37,19 @@ jgs  '-._'--'_.-'
         <img class="titleLogo" src="../../../assets/images/logo/logo256.png"/>
         <div>
           <span class=titleText>jsPerf</span> <span class=version>v1.1.0</span>
-          <div class="titleQuoteWide">  <!--- wide device -->
-            simple-to-use JavaScript timer and memory module
-          </div> <!-- titleQuoteWide -->
-          <div class="titleQuoteNarrow">  <!--- narrow device -->
-            JS timer and memory
-          </div> <!-- titleQuoteNarrow -->
+          <div class="noShowIfNarrow">
+            simple-to-use JS code timing and memory measurement
+          </div>
+          <div class="showIfNarrow">JS code timing and memory measurement</div>
         </div>  <!-- container for title and quote -->
       </div>  <!-- titleLeft -->
       <div class="titleRight"><div class="titleDate">date</div></div>
     </div> <!-- titleContainer -->
 
     jsPerf is a simple-to-use JavaScript module that measures memory
-    and speed. It works both in node and on the web and comes with
-    several examples. jsPerf also includes a real-time memory widget
-    so you can observe overall memory behavior.
+    and code execution speed. It works both in node and on the web and
+    comes with several examples. jsPerf also includes a real-time
+    memory widget so you can observe overall memory behavior.
     <br><br>
 
     <div class=exampleContainer>
@@ -83,6 +81,8 @@ after removing a 10M array:  4,732,400</pre>
         </div>
         -->
 
+        <br><br><br>
+        <hr>
       </div> <!-- exampleContainerLeft -->
 
       <div class="exampleContainerRight">
@@ -97,23 +97,14 @@ after removing a 10M array:  4,732,400</pre>
 
         <button class="bigBlueButton"
                 onpointerup="window.location='./webExamples/timeYourCode/timeYourCode.html'">
-          time your code
+          time your code tool
         </button>
+
+        <br><br>
+        <hr>
+
       </div> <!-- exampleContainerRight -->
     </div> <!-- exampleContainer -->
-    <br>
-
-    <!--
-    <div class="itemList buttonList" style="align-items:top">
-      <div style="text-align:center;">
-        <button class="bigBlueButton buttonDisabled" style="padding: 0.25rem"
-                onpointerup="window.location='./webExamples/memoryMeasureYourCode.html'">
-          measure memory
-        </button>
-        <div style="font-size: 0.85rem;">coming soon!</div>
-      </div>
-    </div> <!-- itemList buttonList
-    -->
 
     <h2>Learn More</h2>
     <div class="itemList">
