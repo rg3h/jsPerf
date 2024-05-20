@@ -67,11 +67,12 @@ jgs  '-._'--'_.-'
     flags. For example:
     <br><br>
 
-    <pre class="smallFont">
-chrome --js-flags="--expose-gc" --enable-precise-memory-info        \
-  "https://localhost:8000/src/modules/jsPerf/examples/webExamples/  \
-    webContinuousMemoryExample/webContinuousMemoryExample.html"</pre>
-    <br><br>
+    <div style="display:flex;justify-content:center;">
+      <pre class="smallFont">
+chrome --js-flags="--expose-gc" --enable-precise-memory-info \
+"https://localhost:8000/.../webSimpleTimerExample.html"
+      </pre>
+    </div>
 
     <ul>
       <li><a href="./webExamples/webSimpleMemoryExample/webSimpleMemoryExample.html">simple memory example</a></li>
@@ -95,30 +96,31 @@ chrome --js-flags="--expose-gc" --enable-precise-memory-info        \
     performance.
     <br><br>
 
-    <pre class="smallFont">
-node ../../../../tools/server/simpleServer.js --webroot "../../"
+    <div style="display:flex;justify-content:center;">
+      <pre class="smallFont">
+node .../tools/server/simpleServer.js --webroot "../../"
 chrome --js-flags="--expose-gc" --enable-precise-memory-info \
-  "https://localhost:8000/src/modules/jsPerfWidget/examples/jsPerfWidgetExample.html" </pre>
-    <br><br>
+"https://localhost:8000/.../jsPerfWidgetExample.html"
+      </pre>
+    </div>
 
     <a href="../../jsPerfWidget/examples/jsPerfWidgetExample.html">jsPerf widget example</a> (memory use)</a>
 
 
     <h2>Node Examples</h2>
 
-    cd into these directories and run the provided node script:
-    <div class="linkList">
-      <pre>
-cd nodeExamples/nodeSimpleMemoryExample/
-cd nodeExamples/nodeContinuousMemoryExample/
-
-cd nodeExamples/nodeSimpleTimerExample/
-cd nodeExamples/nodeContinuousTimerExample/
-      </pre>
-    </div>
+    Just as there are timing and memory examples for the web, there
+    are similar jsPerf examples for node. With node, you will
+    use <b>include</b> rather than the older <b>require</b> since
+    jsPerf is an ES6 style module.
+    <br><br>
+    cd into <pre>
+src/modules/jsPerf/examples/nodeExamples<br></pre>
+    to explore the examples.
+    <br><br>
 
     <a href="https://github.com/rg3h/jsPerf">get jsPerf on github</a>
-    <br>
+
   </div> <!-- middle -->
 </body>
 </html>
