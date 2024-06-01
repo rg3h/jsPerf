@@ -5,7 +5,9 @@
 jsPerf is a simple-to-use JavaScript module that measures memory and code speed.
 It works both in node and on the web and comes with several examples.
 jsPerf also includes a real-time memory widget so you can observe overall memory behavior.
-<br>
+<br><br>
+Also see this <a href="https://rg3h.github.io/jsPerf/src/modules/jsPerf/examples/index.html">jsPerf documentation</a>
+<br><br>
 
 <table>
   <tr>
